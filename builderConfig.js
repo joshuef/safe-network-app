@@ -52,6 +52,7 @@ const buildConfig = {
             to: 'assets'
         }
     ],
+    extraResources: ['authd/safe-authd'],
     artifactName: `safe-network-app-v\${version}-\${os}-x64.\${ext}`,
     dmg: {
         contents: [
