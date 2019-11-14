@@ -25,6 +25,8 @@ fixture`Permission Request Flow`
 
 // TODO: Setup e2e to always have authd running. (as part of app?)
 // Right now authd must be setup and running manually
+
+// eslint-disable-next-line jest/no-focused-tests
 test.only( 'can navigate to login, and attempt/fail to login', async ( t ) => {
     if ( isCI ) {
         // @ts-ignore
