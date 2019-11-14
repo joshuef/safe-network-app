@@ -99,7 +99,7 @@ after_failure:
 # check resolution...
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then  system_profiler SPDisplaysDataType | grep Resolution
   fi
-- yarn log
+- cat $TMPDIR/safe-network-app.log;
 
 
 before_deploy:
