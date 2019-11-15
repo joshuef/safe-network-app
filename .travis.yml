@@ -100,7 +100,8 @@ after_failure:
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then  system_profiler SPDisplaysDataType | grep Resolution
   fi
 - cat $TMPDIR/safe-network-app.log;
-
+- ll "/Users/travis/build/joshuef/safe-network-app/release/mac/SAFE Network App.app/Contents/Resources/authd/safe-authd""
+- ls "releases/mac/SAFE Network App.app/Contents/Resources/"
 
 before_deploy:
   - |
