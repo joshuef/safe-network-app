@@ -2,7 +2,7 @@ import React from 'react';
 import { I18n } from 'react-redux-i18n';
 import {
     Box,
-    Fab,
+    Button,
     Typography,
     CircularProgress,
     Tooltip
@@ -181,14 +181,14 @@ export class AppStateButton extends React.Component<Props> {
                 {!isInstalled && progressButtonIcon && (
                     <Box className={styles.progressButton}>
                         <Tooltip title={buttonText} placement="top">
-                            <Fab
-                                color="primary"
+                            <Button
                                 className={styles.progressFab}
+                                color="primary"
                                 onClick={handleClick}
                                 aria-label="Application Action Button"
                             >
                                 {progressButtonIcon}
-                            </Fab>
+                            </Button>
                         </Tooltip>
                         <CircularProgress
                             value={percentageProgress}
@@ -202,7 +202,7 @@ export class AppStateButton extends React.Component<Props> {
                     </Box>
                 )}
                 {!progressButtonIcon && (
-                    <Fab
+                    <Button
                         variant="extended"
                         color="primary"
                         onClick={handleClick}
@@ -212,7 +212,7 @@ export class AppStateButton extends React.Component<Props> {
                             styles.openButton}`}
                     >
                         {buttonText}
-                    </Fab>
+                    </Button>
                 )}
 
                 {statusMessage && (

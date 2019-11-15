@@ -60,6 +60,15 @@ const DEFAULT_THEME = {
             fontSize: '14px',
             fontWeight: SF_PRO.TEXT.FONT_WEIGHT.MEDIUM
         }
+    },
+    props: {
+        MuiButtonBase: {
+            // The default props to change
+            disableRipple: true // No more ripple, on the whole application 💣!
+        },
+        Button: {
+            variant: 'contained'
+        }
     }
 };
 
