@@ -13,10 +13,23 @@ const SF_PRO = {
 };
 
 const DEFAULT_THEME = {
+    // GREEN for ticks etc: #6EDD00
     palette: {
-        primary: { main: '#4054B2' },
-        secondary: { main: '#FF5722' }
+        primary: {
+            main: '#4054B2',
+            light: '#0094FF'
+            // light: '#E4E6F1',
+            // main: string;
+            // dark?: string;
+            // contrastText?: string;
+        },
+
+        secondary: { main: '#FF5722' },
+        error: {
+            main: '#E2254C'
+        }
     },
+    spacing: 10,
     typography: {
         fontFamily: 'SF Pro Text, "Helvetica Neue", Arial, sans-serif',
         h5: {
