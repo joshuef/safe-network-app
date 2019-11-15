@@ -1,19 +1,20 @@
-/* button.actionButton {
+button.actionButton {
     box-shadow: none;
-    background-color: #4054b2;
-    color: #fff;
-    height: 24px;
+
+    /* height: 24px; */
     border-radius: 17px;
-    padding: 0 8px;
-    min-width: 80px;
-    font-size: 0.75rem;
+
+    /* padding: 0 8px; */
+
+    /* min-width: 80px; */
+
+    /* font-size: 0.75rem; */
 }
 
 button.actionButton.openButton {
     background-color: transparent;
-    color: #4054b2;
     border: 1px solid rgba(0, 0, 0, 0.16);
-} */
+}
 
 .wrap {
     position: relative;

@@ -64,10 +64,8 @@ const DEFAULT_THEME = {
     props: {
         MuiButtonBase: {
             // The default props to change
-            disableRipple: true // No more ripple, on the whole application 💣!
-        },
-        Button: {
-            variant: 'contained'
+            disableRipple: true
+            // variant: 'contained'
         }
     }
 };

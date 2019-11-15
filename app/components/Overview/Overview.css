@@ -20,3 +20,10 @@
 .container .List {
     padding-top: 0;
 }
+
+.container .loginButton {
+    position: absolute;
+    bottom: 3rem;
+    right: 2rem;
+    z-index: 1200;
+}
