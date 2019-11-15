@@ -107,6 +107,7 @@ after_failure:
 - ls "/Users/travis/build/joshuef/safe-network-app/release/"
 - ls "release/mac/SAFE Network App.app"
 - ls "release/mac/SAFE Network App.app/Contents/Resources/"
+- ls "release/mac/SAFE Network App.app/Contents/Resources/authd"
 
 before_deploy:
   - |
