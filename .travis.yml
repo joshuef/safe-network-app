@@ -108,6 +108,8 @@ after_failure:
 - ls "release/mac/SAFE Network App.app"
 - ls "release/mac/SAFE Network App.app/Contents/Resources/"
 - ls "release/mac/SAFE Network App.app/Contents/Resources/authd"
+- ls "release/linux/resources"
+- ls "release/linux/resources/authd"
 
 before_deploy:
   - |
