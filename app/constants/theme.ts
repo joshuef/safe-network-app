@@ -62,11 +62,11 @@ const DEFAULT_THEME = {
         }
     },
     props: {
-        MuiButtonBase: {
-            // The default props to change
-            disableRipple: true
-            // variant: 'contained'
-        }
+        // MuiButtonBase: {
+        //     // The default props to change
+        //     disableRipple: true
+        //     // variant: 'contained'
+        // }
     }
 };
 

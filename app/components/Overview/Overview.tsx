@@ -105,6 +105,7 @@ export class Overview extends Component<Props> {
 
         if ( appPreferences.shouldOnboard ) return <Redirect to={ON_BOARDING} />;
 
+        // LOGIN BUTTON: if we want this everywhere use a universal route...
         return (
             <div className={styles.container} data-tid="container">
                 {!isLoggedIn && (

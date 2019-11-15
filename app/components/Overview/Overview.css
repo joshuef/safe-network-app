@@ -22,8 +22,8 @@
 }
 
 .container .loginButton {
-    position: absolute;
-    bottom: 3rem;
+    position: fixed;
+    bottom: 2rem;
     right: 2rem;
     z-index: 1200;
 }

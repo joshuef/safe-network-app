@@ -74,7 +74,6 @@ install:
   - if [[ "$TRAVIS_OS_NAME" != "windows" ]]; then yarn; fi
   - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then travis_wait 30 yarn --ignore-engines --network-timeout 800000; fi
   - ls "authd"
-  - ls "/Users/travis/build/joshuef/safe-network-app/authd"
   # On Linux, initialize "virtual display". See before_script
   - |
     if [ "$TRAVIS_OS_NAME" == "linux" ]; then

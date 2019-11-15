@@ -203,7 +203,7 @@ export class AppStateButton extends React.Component<Props> {
                 )}
                 {!progressButtonIcon && (
                     <Button
-                        variant="extended"
+                        variant="contained"
                         color="primary"
                         onClick={handleClick}
                         aria-label="Application Action Button"
