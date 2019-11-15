@@ -144,7 +144,6 @@ export class App extends React.PureComponent<Props> {
                     </div>
                     <div className={styles.headerBar}>
                         <HeaderBar
-                            className={styles.headerBar}
                             pageTitle={pageTitle}
                             isLoggedIn={isLoggedIn}
                             logOutOfNetwork={logOutOfNetwork}
