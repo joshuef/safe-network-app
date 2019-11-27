@@ -17,21 +17,19 @@ jobs:
     - name: Set tag as env
       run: echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:10})
     - name: lets check tag
-      run: |
-        echo $RELEASE_VERSION
-        echo ${{ env.RELEASE_VERSION }}
-    # - uses: wyozi/download-gh-release-asset@master
-    #   with:
-    #     args: "safe-${{ env.RELEASE_VERSION }}-thing"
-    #     path: release
-    # - uses: wyozi/download-gh-release-asset@master
-    #   with:
-    #     args: bla.yml
-    #     path: release
-    # - name: Check dlded assets
-    #   shell: bash
-    #   run: ls release
-    # Upload all the release archives to S3; FFI links will be in the release description.
-    # - uses: actions/aws/cli@master
-    #   with:
-    #     args: s3 sync deploy/prod s3://safe-cli --acl public-read
+      run: echo ${{ env.RELEASE_VERSION }}
+    - uses: wyozi/download-gh-release-asset@master
+      with:
+        args: "safe-${{ env.RELEASE_VERSION }}-thing"
+        path: release
+    - uses: wyozi/download-gh-release-asset@master
+      with:
+        args: bla.yml
+        path: release
+    - name: Check dlded assets
+      shell: bash
+      run: ls release
+    Upload all the release archives to S3; FFI links will be in the release description.
+    - uses: actions/aws/cli@master
+      with:
+        args: s3 sync deploy/prod s3://safe-cli --acl public-read
