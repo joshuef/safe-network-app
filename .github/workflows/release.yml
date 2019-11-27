@@ -20,17 +20,17 @@ jobs:
       run: |
         echo $RELEASE_VERSION
         echo ${{ env.RELEASE_VERSION }}
-    - uses: wyozi/download-gh-release-asset@master
-      with:
-        args: "safe-${{ env.RELEASE_VERSION }}-thing"
-        path: release
-    - uses: wyozi/download-gh-release-asset@master
-      with:
-        args: bla.yml
-        path: release
-    - name: Check dlded assets
-      shell: bash
-      run: ls release
+    # - uses: wyozi/download-gh-release-asset@master
+    #   with:
+    #     args: "safe-${{ env.RELEASE_VERSION }}-thing"
+    #     path: release
+    # - uses: wyozi/download-gh-release-asset@master
+    #   with:
+    #     args: bla.yml
+    #     path: release
+    # - name: Check dlded assets
+    #   shell: bash
+    #   run: ls release
     # Upload all the release archives to S3; FFI links will be in the release description.
     # - uses: actions/aws/cli@master
     #   with:
