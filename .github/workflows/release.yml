@@ -1,0 +1,24 @@
+name: "Publish release assets to s3"
+on:
+- release
+
+jobs:
+  asset_fetcher:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: wyozi/download-gh-release-asset@master
+      env:
+        AWS_ACCESS_KEY_ID: AKIAVVODCRMSDTFZ72NK
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_USER_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: eu-west-2
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        args: *
+        path: release
+    - name: Check dlded assets
+      shell: bash
+      run: ls release
+    # Upload all the release archives to S3; FFI links will be in the release description.
+    # - uses: actions/aws/cli@master
+    #   with:
+    #     args: s3 sync deploy/prod s3://safe-cli --acl public-read
