@@ -15,12 +15,14 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
     - name: Set tag as env
-      run: export RELEASE_VERSION=$(echo ${GITHUB_REF:10})
+      run: echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:10})
     - name: lets check tag
-      run: echo $RELEASE_VERSION
+      run: |
+        echo $RELEASE_VERSION
+        echo ${{ env.RELEASE_VERSION }}
     - uses: wyozi/download-gh-release-asset@master
       with:
-        args: "safe-$RELEASE_VERSION-thing"
+        args: "safe-${{ env.RELEASE_VERSION }}-thing"
         path: release
     - uses: wyozi/download-gh-release-asset@master
       with:
