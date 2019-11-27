@@ -20,7 +20,7 @@ jobs:
       run: echo $RELEASE_VERSION
     - uses: wyozi/download-gh-release-asset@master
       with:
-        args: safe-${{ RELEASE_VERSION }}-thing
+        args: "safe-$RELEASE_VERSION-thing"
         path: release
     - uses: wyozi/download-gh-release-asset@master
       with:
