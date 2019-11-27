@@ -5,15 +5,21 @@ on:
 jobs:
   asset_fetcher:
     runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: AKIAVVODCRMSDTFZ72NK
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_USER_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: eu-west-2
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
+    - name: Set tag as env
+      run: echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:10})
     - uses: wyozi/download-gh-release-asset@master
-      env:
-        AWS_ACCESS_KEY_ID: AKIAVVODCRMSDTFZ72NK
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_USER_SECRET_ACCESS_KEY }}
-        AWS_DEFAULT_REGION: eu-west-2
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        args: '*'
+        args: safe-${{ RELEASE_VERSION }}-thing
+        path: release
+    - uses: wyozi/download-gh-release-asset@master
+      with:
+        args: bla.yml
         path: release
     - name: Check dlded assets
       shell: bash
