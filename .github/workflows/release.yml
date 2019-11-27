@@ -29,7 +29,7 @@ jobs:
     - name: Check dlded assets
       shell: bash
       run: ls release
-    Upload all the release archives to S3; FFI links will be in the release description.
+    # Upload all the release archives to S3; FFI links will be in the release description.
     - uses: actions/aws/cli@master
       with:
         args: s3 sync deploy/prod s3://safe-cli --acl public-read
