@@ -1,6 +1,9 @@
-name: "Publish release assets to s3"
+name: "Publish assets to s3"
+# Trigger the workflow on pull request activity
 on:
-- release
+  release:
+    # Only use the types keyword to narrow down the activity types that will trigger your workflow.
+    types: [published, edited]
 
 jobs:
   asset_fetcher:
@@ -12,7 +15,9 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
     - name: Set tag as env
-      run: echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:10})
+      run: export RELEASE_VERSION=$(echo ${GITHUB_REF:10})
+    - name: lets check tag
+      run: echo $RELEASE_VERSION
     - uses: wyozi/download-gh-release-asset@master
       with:
         args: safe-${{ RELEASE_VERSION }}-thing
