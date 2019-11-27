@@ -33,61 +33,10 @@ jobs:
         run: echo ${{ env.YAML_FILE }}
       # testing
       - uses: wyozi/download-gh-release-asset@master
-      with:
-        args: "bla.yml"
-        path: release
-      ## mac
-      # - uses: wyozi/download-gh-release-asset@master
-      #   with:
-      #     args: "safe-network-app-${{ env.RELEASE_VERSION }}-mac-x64.dmg"
-      #     path: release
-      # - uses: wyozi/download-gh-release-asset@master
-      #   with:
-      #     args: "safe-network-app-${{ env.RELEASE_VERSION }}-mac-x64.dmg.blockmap"
-      #     path: release
-      # - uses: wyozi/download-gh-release-asset@master
-      #   with:
-      #     args: "safe-network-app-${{ env.RELEASE_VERSION }}-mac-x64.zip"
-      #     path: release
-      # - uses: wyozi/download-gh-release-asset@master
-      #   with:
-      #     args: "safe-network-app-${{ env.RELEASE_VERSION }}-mac-x64.pkg"
-      #     path: release
-      ## linux
-      # - uses: wyozi/download-gh-release-asset@master
-      #   with:
-      #     args: "safe-network-app-${{ env.RELEASE_VERSION }}-linux-x64.AppImage"
-      #     path: release
-      # - uses: wyozi/download-gh-release-asset@master
-      #   with:
-      #     args: "safe-network-app-${{ env.RELEASE_VERSION }}-linux-x64.zip"
-      #     path: release
-      ## win
-      # - uses: wyozi/download-gh-release-asset@master
-      #   with:
-      #     args: "safe-network-app-${{ env.RELEASE_VERSION }}-win-x64.exe"
-      #     path: release
-      # - uses: wyozi/download-gh-release-asset@master
-      #   with:
-      #     args: "safe-network-app-${{ env.RELEASE_VERSION }}-win-x64.exe.blockmap"
-      #     path: release
-      # - uses: wyozi/download-gh-release-asset@master
-      #   with:
-      #     args: "safe-network-app-${{ env.RELEASE_VERSION }}-win-x64.msi"
-      #     path: release
-      # yamls
-      # - uses: wyozi/download-gh-release-asset@master
-      #   with:
-      #     args: ${{ env.yaml }}.yml
-      #     path: release
-      # - uses: wyozi/download-gh-release-asset@master
-      #   with:
-      #     args: ${{ env.yaml }}-mac.yml
-      #     path: release
-      # - uses: wyozi/download-gh-release-asset@master
-      #   with:
-      #     args: ${{ env.yaml }}-linux.yml
-      #     path: release
+        with:
+          args: "bla.yml"
+          path: release
+
       # do more...
       - name: Check dlded assets
         shell: bash
